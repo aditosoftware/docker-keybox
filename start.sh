@@ -14,4 +14,4 @@ ln -sf /a/data/keydb /opt/KeyBox-jetty/jetty/keybox/WEB-INF/classes/
 
 
 cd /opt/KeyBox-jetty/jetty/
-java -Xms1024m -Xmx1024m -jar start.jar
+java -Xmx1024m -jar start.jar
