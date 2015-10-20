@@ -2,7 +2,7 @@
 set -x
 if [ ! -f '/a/data/KeyBoxConfig.properties' ]
 then
-    cp /opt/KeyBox-jetty/jetty/keybox/WEB-INF/classes/KeyBoxConfig.properties /a/data/KeyBoxConfig.properties
+    mv /opt/KeyBox-jetty/jetty/keybox/WEB-INF/classes/KeyBoxConfig.properties /a/data/KeyBoxConfig.properties
 fi
 ln -sf /a/data/KeyBoxConfig.properties /opt/KeyBox-jetty/jetty/keybox/WEB-INF/classes/KeyBoxConfig.properties
 
