@@ -6,8 +6,8 @@ Key management and administration is based on profiles assigned to defined users
 
 ## How to use this image
 
-	```console
-	docker run -d -v /my/own/datadir:/a/data -p 8443:8443 adito/keybox
+	```
+	$ docker run -d -v /my/own/datadir:/a/data -p 8443:8443 adito/keybox
 	```
 Now you can access keybox at  "https://host-ip:8443"
 
