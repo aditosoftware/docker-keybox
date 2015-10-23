@@ -1,17 +1,15 @@
 # What is KeyBox?
 KeyBox is an open-source web-based SSH console that centrally manages administrative access to systems. Web-based administration is combined with management and distribution of user's public SSH keys. Key management and administration is based on profiles assigned to defined users.
-More information on [sshkeybox.com](http://sshkeybox.com/) or [GitHub](https://github.com/skavanagh/KeyBox)
-
-## KeyBox - Version: 2.84.00
+More information on [sshkeybox.com](http://sshkeybox.com/) or [GitHub](https://github.com/skavanagh/KeyBox).
 
 
 ## How to use this image
 ```console
 $ docker run -d -v /my/own/datadir:/a/keydb -p 8443:8443 adito/keybox
 ```
-You can replace `/my/own/datadir` with your preferred path on your host 
-now you can access keybox at `https://host-ip:8443`
-the default user is `admin` and the default password is `changeme`
+You can replace `/my/own/datadir` with your preferred path on your host.
+Now you can access keybox at `https://host-ip:8443`.
+The default user is `admin` and the default password is `changeme`.
 
 
 ## Environment Variables
