@@ -3,7 +3,9 @@ KeyBox is an open-source web-based SSH console that centrally manages administra
 Web-based administration is combined with management and distribution of user's public SSH keys.
 Key management and administration is based on profiles assigned to defined users.
 
+
 ## KeyBox - Version: 2.84.00
+
 
 ## How to use this image
 ```
@@ -11,111 +13,113 @@ Key management and administration is based on profiles assigned to defined users
 ```
 now you can access keybox at "https://host-ip:8443"
 
-## Variables
 
-Example:
-```
-	$ docker run -d -v /my/own/datadir:/a/keydb -p 8443:8443 -e enableOTP=false adito/keybox
-```
-I disabled two-factor-authentication in this example
+## Environment Variables
 
-#### here you can find all variables and their default values
+I listed all possible variables with their default values below.
+
+
+### `resetApplicationSSHKey=false`
 
 set to true to regenerate and import SSH keys
-```
-resetApplicationSSHKey=false
-```
+
+
+### `sshKeyType=rsa`
 
 SSH Key Type 'dsa' or 'rsa' for generated keys
-```
-sshKeyType=rsa
-```
+
+
+### `sshKeyLength=2048`
 
 SSH Key Length for generated keys
-```
-sshKeyLength=2048
-```
+
+
+### `privateKey=`
 
 private ssh key, leave blank to generate key pair
-```
-privateKey=
-```
+
+
+### `publicKey=`
 
 public ssh key, leave blank to generate key pair
-```
-publicKey=
-```
+
+
+### `defaultSSHPassphrase=${randomPassphrase}`
 
 default passphrase, leave blank for key without passphrase
-```
-defaultSSHPassphrase=${randomPassphrase}
-```
+
+
+### `enableInternalAudit=false`
 
 enable audit
-```
-enableInternalAudit=false
-```
+
+
+### `deleteAuditLogAfter=90`
 
 keep audit logs for in days
-```
-deleteAuditLogAfter=90
-```
+
+
+### `auditLogAppender=`
 
 set an audit log server using log4j (ex: logstash). Edit the log4j.xml to configure appender.
-```
-auditLogAppender=
-```
+
+
+### `serverAliveInterval=60`
 
 The number of seconds that the client will wait before sending a null packet to the server to keep the connection alive
-```
-serverAliveInterval=60
-```
+
+
+### `websocketTimeout=0`
 
 default timeout in minutes for websocket connection (no timeout for <=0)
-```
-websocketTimeout=0
-```
+
+
+### `agentForwarding=false`
 
 enable SSH agent forwarding
-```
-agentForwarding=false
-```
+
+
+### `enableOTP=true`
 
 enable two-factor authentication
-```
-enableOTP=true
-```
+
+
+### `keyManagementEnabled=true`
 
 enable key management
-```
-keyManagementEnabled=true
-```
+
+
+### `forceUserKeyGeneration=true`
 
 set to true to generate keys when added/managed by users and enforce strong passphrases set to false to allow users to set their own public key
-```
-forceUserKeyGeneration=true
-```
+
+
+### `authKeysRefreshInterval=120`
 
 authorized_keys refresh interval in minutes (no refresh for <=0)
-```
-authKeysRefreshInterval=120
-```
+
+
+### `passwordComplexityRegEx=((?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()+=]).{8\,20})`
 
 Regular expression to enforce password policy
-```
-passwordComplexityRegEx=((?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()+=]).{8\,20})
-```
+
+
+### `passwordComplexityMsg=Passwords must be 8 to 20 characters\, contain one digit\, one lowercase\, one uppercase\, and one special character`
 
 Password complexity error message
-```
-passwordComplexityMsg=Passwords must be 8 to 20 characters\, contain one digit\, one lowercase\, one uppercase\, and one special character
-```
+
+
+### `jaasModule=`
 
 specify a external authentication module (ex: ldap-ol, ldap-ad).  Edit the jaas.conf to set connection details
-```
-jaasModule=
-```
 
+
+###Example:
+
+```
+	$ docker run -d -v /my/own/datadir:/a/keydb -p 8443:8443 -e enableOTP=false -e sshKeyLength=4096 adito/keybox
+```
+In this example two-factor authentication is disabled and the SSH Key Length is extended to 4096 bits.
 
 ## Supported Docker versions
 
