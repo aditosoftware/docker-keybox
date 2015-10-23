@@ -1,22 +1,22 @@
-# docker-keybox
-KeyBox is an open-source web-based SSH console that centrally manages administrative access to systems.
-Web-based administration is combined with management and distribution of user's public SSH keys.
-Key management and administration is based on profiles assigned to defined users.
-
+# What is KeyBox?
+KeyBox is an open-source web-based SSH console that centrally manages administrative access to systems. Web-based administration is combined with management and distribution of user's public SSH keys. Key management and administration is based on profiles assigned to defined users.
+More information on [sshkeybox.com](http://sshkeybox.com/) or [GitHub](https://github.com/skavanagh/KeyBox)
 
 ## KeyBox - Version: 2.84.00
 
 
 ## How to use this image
+```console
+$ docker run -d -v /my/own/datadir:/a/keydb -p 8443:8443 adito/keybox
 ```
-	$ docker run -d -v /my/own/datadir:/a/keydb -p 8443:8443 adito/keybox
-```
-now you can access keybox at "https://host-ip:8443"
+You can replace `/my/own/datadir` with your preferred path on your host 
+now you can access keybox at `https://host-ip:8443`
+the default user is `admin` and the default password is `changeme`
 
 
 ## Environment Variables
 
-I listed all possible variables with their default values below.
+All possible environment variables with their default values are listed below.
 
 
 #### `resetApplicationSSHKey=false`
@@ -116,8 +116,8 @@ specify a external authentication module (ex: ldap-ol, ldap-ad).  Edit the jaas.
 
 ###Example:
 
-```
-	$ docker run -d -v /my/own/datadir:/a/keydb -p 8443:8443 -e enableOTP=false -e sshKeyLength=4096 adito/keybox
+```console
+$ docker run -d -v /my/own/datadir:/a/keydb -p 8443:8443 -e enableOTP=false -e sshKeyLength=4096 adito/keybox
 ```
 In this example two-factor authentication is disabled and the SSH Key Length is extended to 4096 bits.
 
@@ -127,3 +127,6 @@ This image is officially supported on Docker version 1.8.3.
 
 Support for older versions (down to 1.6) is provided on a best-effort basis.
 
+## Issues
+
+If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/aditosoftware/docker-keybox/issues).
