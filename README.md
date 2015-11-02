@@ -114,7 +114,7 @@ Password complexity error message
 specify a external authentication module (ex: ldap-ol, ldap-ad).  Edit the jaas.conf to set connection details
 
 
-###Example:
+### Example:
 
 ```console
 $ docker run -d -v /my/own/datadir:/a/keydb -p 8443:8443 -e enableOTP=false -e sshKeyLength=4096 adito/keybox
