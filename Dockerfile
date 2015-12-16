@@ -1,6 +1,6 @@
 FROM java:openjdk-8
 
-RUN wget -qO- "https://github.com/skavanagh/KeyBox/releases/download/v2.84.01/keybox-jetty-v2.84_01.tar.gz" \
+RUN wget -qO- "https://github.com/skavanagh/KeyBox/releases/download/v2.85.01/keybox-jetty-v2.85_01.tar.gz" \
     | tar -xzC /opt
 
 EXPOSE 8443/tcp
