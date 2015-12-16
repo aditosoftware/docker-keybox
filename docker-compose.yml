@@ -1,0 +1,26 @@
+keybox:
+  image: adito/keybox
+  ports:
+    - "8443:8443"
+  volumes:
+    - /my/own/datadir:/a/keydb
+  environment:
+    - resetApplicationSSHKey=
+    - sshKeyType=
+    - sshKeyLength=
+    - privateKey=
+    - publicKey=
+    - defaultSSHPassphrase=
+    - enableInternalAudit=
+    - deleteAuditLogAfter=
+    - serverAliveInterval=
+    - websocketTimeout=
+    - agentForwarding=
+    - oneTimePassword=disabled
+    - keyManagementEnabled=
+    - forceUserKeyGeneration=
+    - authKeysRefreshInterval=
+    - passwordComplexityRegEx=
+    - passwordComplexityMsg=
+    - clientIPHeader=
+    - jaasModule=
