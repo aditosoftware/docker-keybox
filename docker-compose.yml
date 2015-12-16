@@ -16,7 +16,7 @@ keybox:
     - serverAliveInterval=
     - websocketTimeout=
     - agentForwarding=
-    - oneTimePassword=disabled
+    - oneTimePassword=
     - keyManagementEnabled=
     - forceUserKeyGeneration=
     - authKeysRefreshInterval=
