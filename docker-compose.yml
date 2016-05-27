@@ -24,3 +24,8 @@ keybox:
     - passwordComplexityMsg=
     - clientIPHeader=
     - jaasModule=
+    - dbPath=
+    - maxActive=
+    - testOnBorrow=
+    - minIdle=
+    - maxWait=

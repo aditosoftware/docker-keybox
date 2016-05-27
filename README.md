@@ -7,6 +7,13 @@ More information on [sshkeybox.com](http://sshkeybox.com/) or [GitHub](https://g
 
 ## Upgrade Information
 
+#### Following Variables are new in 2.85.03:
+dbPath
+maxActive
+testOnBorrow
+minIdle
+maxWait
+
 #### Following Variables were removed in 2.85:
 auditLogAppender
 enableOTP
@@ -126,6 +133,35 @@ HTTP header to identify client IP Address - 'X-FORWARDED-FOR'
 #### `jaasModule=`
 
 specify a external authentication module (ex: ldap-ol, ldap-ad).  Edit the jaas.conf to set connection details
+
+
+
+### H2 DB and Connection Pool settings
+
+
+#### `dbPath=`
+
+Path to the H2 DB file. Leave Blank to use default location which is ../WEB-INF/classes/keydb
+
+
+#### `maxActive=25`
+
+Max connections in the connection pool
+
+
+#### `testOnBorrow=true`
+
+When true, objects will be validated before being returned by the connection pool
+
+
+#### `minIdle=2`
+
+The minimum number of objects allowed in the connection pool before spawning new ones
+
+
+#### `maxWait=15000`
+
+The maximum amount of time (in milliseconds) to block before throwing an exception when the connection pool is exhausted
 
 
 
