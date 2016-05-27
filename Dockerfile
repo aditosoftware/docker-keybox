@@ -1,6 +1,7 @@
-FROM java:openjdk-8
+FROM java:8-jdk-alpine
 
-RUN wget -qO- "https://github.com/skavanagh/KeyBox/releases/download/v2.85.01/keybox-jetty-v2.85_01.tar.gz" \
+RUN mkdir -p /opt \
+    && wget -qO- "https://github.com/skavanagh/KeyBox/releases/download/v2.85.03/keybox-jetty-v2.85_03.tar.gz" \
     | tar -xzC /opt
 
 EXPOSE 8443/tcp
