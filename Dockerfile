@@ -1,7 +1,8 @@
 FROM java:8-jdk-alpine
 
 RUN mkdir -p /opt \
-    && wget -qO- "https://github.com/skavanagh/KeyBox/releases/download/v2.85.03/keybox-jetty-v2.85_03.tar.gz" \
+    && apk add --no-cache wget \
+    && wget -qO- "https://github.com/skavanagh/KeyBox/releases/download/v2.86.00/keybox-jetty-v2.86_00.tar.gz" \
     | tar -xzC /opt
 
 EXPOSE 8443/tcp
